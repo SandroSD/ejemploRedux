@@ -4,15 +4,20 @@ import * as actionTypes from '../../store/actions';
 
 import Persona from '../../components/Persona/Persona';
 import ControlDatos from '../../components/ControlDatos/ControlDatos';
+import Header from '../../components/Header/Header';
 import 'bootstrap/dist/css/bootstrap.css';
 
 class Form extends Component {
   render() {
+    const backgroundColor = this.props.bck.color;
     return (
-      <div className="container-fluid">
+      <div className="container-fluid"
+           style={{backgroundColor: backgroundColor,
+                  height:"100vh"
+      }}>
         <div className="row">
           <div className="col-lg-12" align="center">
-            <h3>Redux Ejemplo</h3>
+            <Header />
           </div>
           <div className="col-lg-6">
             <Persona />
@@ -26,17 +31,11 @@ class Form extends Component {
   }
 }
 
-const mapStateToProps = state => {
-    return {
-        state
-    };
+const mapStateToProps = state => {  
+  return {
+      per: state.per,
+      bck: state.bck
+  };
 }
-
-/*const submit = data =>{
-    return {
-        type: actionTypes.SUBMIT,
-        payload: data
-    }
-}*/
 
 export default connect(mapStateToProps, null)(Form);

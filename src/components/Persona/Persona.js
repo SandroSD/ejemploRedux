@@ -11,7 +11,6 @@ class Persona extends Component {
     }
     onSubmitHandler = (e) =>{
         e.preventDefault();
-        console.log("lero",this.props);
         this.props.submit(this.state);
     }
     onChangeHandler = (e) =>{

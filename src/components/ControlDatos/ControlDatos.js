@@ -27,7 +27,7 @@ class Persona extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        persona: state
+        persona: state.per
     }
 }
 
